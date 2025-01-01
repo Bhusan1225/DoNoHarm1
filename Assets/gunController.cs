@@ -5,25 +5,59 @@ using UnityEngine;
 public class gunController : MonoBehaviour
 {
 
-    public float rotationSpeed = 100f; // Speed at which the lever rotates
-    public float minRotation = 0f;    // Minimum angle (0 degrees)
-    public float maxRotation = 180f; // Maximum angle (180 degrees)
-
-    private float currentRotation = 0f; // Current rotation of the lever
+    public float rotationSpeed = 100f;
+    public float minRotation = 0f;
+    public float maxRotation = 180f;
+   
+    //bullet
+    public GameObject bulletPrefab;
+    public Transform gunTip;
+    public float bulletSpeed = 10000f;
+    
+   
+    private float currentRotation = 0f;
 
     void Update()
     {
-        // Get horizontal mouse movement
+        GunRotation();
+
+       
+
+
+    }
+
+    void GunRotation()
+    {
         float mouseX = Input.GetAxis("Mouse X");
-
-        // Calculate the new rotation based on mouse movement
+        
         currentRotation += -mouseX * rotationSpeed * Time.deltaTime;
-
-        // Clamp the rotation between minRotation and maxRotation
         currentRotation = Mathf.Clamp(currentRotation, minRotation, maxRotation);
 
-        // Apply the rotation to the lever
         transform.localRotation = Quaternion.Euler(0f, 0f, currentRotation);
+
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            
+            ShootBullet();
+        }
+    }
+
+    
+
+    void ShootBullet()
+    {
+        if (bulletPrefab != null && gunTip != null)
+        {
+            GameObject bullet = Instantiate(bulletPrefab, gunTip.position, gunTip.rotation);
+            Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
+
+            if (bulletRb != null)
+            {
+                bulletRb.velocity = gunTip.forward * bulletSpeed;
+            }
+        }
     }
 }
+
+
 
