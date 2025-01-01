@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8168018182202726403}
   - component: {fileID: 7059927105435481742}
   - component: {fileID: 4600097206715495408}
+  - component: {fileID: 2802426736914172518}
   - component: {fileID: 3201617793740057390}
   m_Layer: 0
   m_Name: bomb
@@ -115,7 +116,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -131,6 +132,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2802426736914172518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6206334702803873168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b30912ddf2513724ab2828513a7bf67e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &3201617793740057390
 Rigidbody2D:
   serializedVersion: 4
