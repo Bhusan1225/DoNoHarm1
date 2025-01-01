@@ -154,6 +154,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1068342894}
+  - {fileID: 2115153892}
   m_Father: {fileID: 2058540205}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!212 &262146092
@@ -1208,7 +1209,7 @@ GameObject:
   - component: {fileID: 1245468608}
   m_Layer: 0
   m_Name: ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2545,7 +2546,7 @@ MonoBehaviour:
   maxRotation: 180
   bulletPrefab: {fileID: 8829155419386465981, guid: a935cb93c7bcf12489186cfabc550cd2, type: 3}
   gunTip: {fileID: 1068342894}
-  bulletSpeed: 6270
+  bulletSpeed: 100
   rayDistance: 50
   lineRenderer: {fileID: 2115153891}
 --- !u!1 &2115153890
@@ -2612,7 +2613,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 0.006080485
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -2630,8 +2631,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 1, g: 0, b: 0, a: 1}
+      key1: {r: 1, g: 0, b: 0, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -2662,7 +2663,7 @@ LineRenderer:
     numCapVertices: 0
     alignment: 0
     textureMode: 0
-    textureScale: {x: 1, y: 1}
+    textureScale: {x: 0.5, y: 0.5}
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
@@ -2677,12 +2678,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2115153890}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.736294, y: -6.098673, z: 0.08876416}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0.034597594, y: 1.1331065, z: 0.08876416}
+  m_LocalScale: {x: 1.2232683, y: 9.422462, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 262146091}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -2695,4 +2696,3 @@ SceneRoots:
   - {fileID: 555538769}
   - {fileID: 352942784}
   - {fileID: 1067697657}
-  - {fileID: 2115153892}
