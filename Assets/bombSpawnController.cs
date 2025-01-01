@@ -10,8 +10,9 @@ public class bombSpawnController : MonoBehaviour
 
     internal bool isBombThere;
 
+    float delayNextBomb = 5f;
 
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,7 @@ public class bombSpawnController : MonoBehaviour
         {
             Instantiate(bombPrefab, BombSpawnTransform.position, BombSpawnTransform.rotation);
             isBombThere = true;
+            Invoke(nameof(BombThere), delayNextBomb);
         }
         
     }

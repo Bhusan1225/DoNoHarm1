@@ -5,7 +5,7 @@ using UnityEngine;
 public class bombTriggerController : MonoBehaviour
 {
 
-    float delayNextBomb = 10f;
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Plant"))
@@ -13,22 +13,14 @@ public class bombTriggerController : MonoBehaviour
 
             Debug.Log("bomb dropped");
             Destroy(collision.gameObject);
-            Invoke(nameof(DestroyBomb), delayNextBomb);
+            
 
 
             //Destroy(gameObject, 10);
-
+            Destroy(gameObject);
         }
     }
 
 
-    void DestroyBomb()
-    {
-
-        bombSpawnController bombTrigger = FindAnyObjectByType<bombSpawnController>();
-        bombTrigger.BombThere();
-        
-        Destroy(gameObject);
-        
-    }
+    
 }
