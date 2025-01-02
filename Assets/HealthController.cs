@@ -32,4 +32,23 @@ public class HealthController : MonoBehaviour
 
         healthBar.Add(bar);
     }
+
+    public void reduce()
+    {
+
+        if (healthBar.Count > 1)
+        {
+
+            Transform lastSegment = healthBar[healthBar.Count - 1];
+
+            healthBar.RemoveAt(healthBar.Count - 1);
+
+
+            Destroy(lastSegment.gameObject);
+        }
+        else
+        {
+            Debug.Log("GAME OVER");
+        }
+    }
 }
