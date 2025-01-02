@@ -35,13 +35,19 @@ public class gunController : MonoBehaviour
     {
         GunRotation();
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
 
             ShootBullet();
         }
 
-        ShootRay();
+        if (Input.GetMouseButton(1))
+        {
+
+            ShootRay();
+        }
+
+        
     }
 
     void GunRotation()
@@ -70,14 +76,14 @@ public class gunController : MonoBehaviour
                 bulletRb.AddForce(gunTip.up * bulletSpeed, ForceMode2D.Impulse);
             }
 
-            Invoke(nameof(destroyBullet), DelayeDestroyBUllet);
+            //Invoke(nameof(destroyBullet), DelayeDestroyBUllet);
         }
     }
 
-    void destroyBullet()
-    {
-        Destroy(bulletPrefab);
-    }
+    //void destroyBullet()
+    //{
+    //    Destroy(bulletPrefab,5);
+    //}
 
     void ShootRay()
     {

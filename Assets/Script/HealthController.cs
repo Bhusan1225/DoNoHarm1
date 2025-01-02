@@ -26,11 +26,20 @@ public class HealthController : MonoBehaviour
 
     public void Grow()
     {
-        Transform bar = Instantiate(this.healthBarPrefab);
-        Vector3 spaceBetweenBar = new Vector3(0.15f, 0f, 0f);
-        bar.position = healthBar[healthBar.Count - 1].position + spaceBetweenBar;
 
-        healthBar.Add(bar);
+        if(healthBar.Count < 14)
+        {
+            Transform bar = Instantiate(this.healthBarPrefab);
+            Vector3 spaceBetweenBar = new Vector3(0.15f, 0f, 0f);
+            bar.position = healthBar[healthBar.Count - 1].position + spaceBetweenBar;
+
+            healthBar.Add(bar);
+        }
+        else
+        {
+            Debug.Log("health is full...");
+        }
+        
     }
 
     public void reduce()
@@ -49,6 +58,9 @@ public class HealthController : MonoBehaviour
         else
         {
             Debug.Log("GAME OVER");
+            //gameOver UI
+
+
         }
     }
 }
