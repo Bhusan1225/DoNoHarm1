@@ -31,6 +31,7 @@ public class bombTriggerController : MonoBehaviour
         {
 
             Debug.Log("Bomb dropped on Protagonist, Health reduced");
+            
             HealthController healtController = FindAnyObjectByType<HealthController>();
             healtController.reduce();
 
