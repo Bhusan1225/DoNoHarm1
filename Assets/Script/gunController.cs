@@ -13,7 +13,7 @@ public class gunController : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform gunTip;
     public float bulletSpeed = 10000f;
-
+    public float DelayeDestroyBUllet = 5f;
 
     //ray
     public float rayDistance = 50f;
@@ -69,7 +69,14 @@ public class gunController : MonoBehaviour
             {
                 bulletRb.AddForce(gunTip.up * bulletSpeed, ForceMode2D.Impulse);
             }
+
+            Invoke(nameof(destroyBullet), DelayeDestroyBUllet);
         }
+    }
+
+    void destroyBullet()
+    {
+        Destroy(bulletPrefab);
     }
 
     void ShootRay()

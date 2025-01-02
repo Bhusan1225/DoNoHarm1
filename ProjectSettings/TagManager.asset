@@ -7,6 +7,7 @@ TagManager:
   - Plant
   - Bomb
   - Ground
+  - Bullet
   layers:
   - Default
   - TransparentFX
