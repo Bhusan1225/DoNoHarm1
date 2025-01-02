@@ -9,6 +9,10 @@ public class PlayerMovement : MonoBehaviour
 
     public float playerJumpHeight;
     Rigidbody2D rb;
+
+   
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,5 +48,8 @@ public class PlayerMovement : MonoBehaviour
 
         }
     }
+
+
+   
 
 }

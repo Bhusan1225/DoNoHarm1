@@ -14,14 +14,18 @@ public class gunController : MonoBehaviour
     public Transform gunTip;
     public float bulletSpeed = 10000f;
     public float DelayeDestroyBUllet = 5f;
+    public bool isShooting;
+    public float Shootingdelay = 3f;
 
     //ray
     public float rayDistance = 50f;
     public LineRenderer lineRenderer;
-
+   
 
     private float currentRotation = 0f;
 
+    //attach script
+    public AirDropManager DropManager;
 
 
     private void Start()
@@ -35,19 +39,42 @@ public class gunController : MonoBehaviour
     {
         GunRotation();
 
+        setShootingInput();
+
+        ShootRay();
+    
+    }
+
+
+    public void setShootingInput()
+    {
+        if (DropManager.isMultipleShootOn == true)
+        {
+            multipleShootInputs();
+        }
+        else if (DropManager.isMultipleShootOn == false)
+        {
+
+            singleShootInputs();
+        }
+    }
+
+    public void singleShootInputs()
+    {
         if (Input.GetMouseButtonDown(0))
         {
-
+            Shootingdelay = 4f;
             ShootBullet();
         }
+    }
 
-        if (Input.GetMouseButton(1))
+    public void multipleShootInputs()
+    {
+        if (Input.GetMouseButton(0))
         {
-
-            ShootRay();
+            Shootingdelay = 0.1f;
+            ShootBullet();
         }
-
-        
     }
 
     void GunRotation()
@@ -66,7 +93,7 @@ public class gunController : MonoBehaviour
 
     void ShootBullet()
     {
-        if (bulletPrefab != null && gunTip != null)
+        if (bulletPrefab != null && gunTip != null && isShooting ==true)
         {
             GameObject bullet = Instantiate(bulletPrefab, gunTip.position, gunTip.rotation);
             Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
@@ -76,33 +103,43 @@ public class gunController : MonoBehaviour
                 bulletRb.AddForce(gunTip.up * bulletSpeed, ForceMode2D.Impulse);
             }
 
-            //Invoke(nameof(destroyBullet), DelayeDestroyBUllet);
+            
         }
+        isShooting = false;
+
+        Invoke(nameof(ActiveShooting), Shootingdelay);
     }
 
-    //void destroyBullet()
-    //{
-    //    Destroy(bulletPrefab,5);
-    //}
+    void ActiveShooting()
+    {
+        isShooting = true;
+
+    }
+    
 
     void ShootRay()
     {
+        
+
         if (gunTip != null && lineRenderer != null)
-        {
-            Ray ray = new Ray(gunTip.position, gunTip.up);
-            RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, rayDistance);
-
-            lineRenderer.SetPosition(0, ray.origin);
-
-            if (hit.collider != null)
             {
-                lineRenderer.SetPosition(1, hit.point);
+                Ray ray = new Ray(gunTip.position, gunTip.up);
+                RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, rayDistance);
+
+                lineRenderer.SetPosition(0, ray.origin);
+
+                if (hit.collider != null)
+                {
+                    lineRenderer.SetPosition(1, hit.point);
+                }
+                else
+                {
+                    lineRenderer.SetPosition(1, ray.origin + ray.direction * rayDistance);
+                }
             }
-            else
-            {
-                lineRenderer.SetPosition(1, ray.origin + ray.direction * rayDistance);
-            }
-        }
+        
+        
+       
     }
 }
 

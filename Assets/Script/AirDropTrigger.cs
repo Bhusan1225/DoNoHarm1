@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class AirDropTrigger : MonoBehaviour
 {
+    public AirDropEnum AirDropType;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("Player"))
         {
 
             Debug.Log("Player collected the carate");
+            AirDropManager DropManager = FindObjectOfType<AirDropManager>();
+
+            DropManager.ActivatePowerUp(AirDropType);
+
             Destroy(gameObject);
 
 
