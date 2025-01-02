@@ -27,6 +27,16 @@ public class bombTriggerController : MonoBehaviour
             return;
         }
 
+        if (collision.gameObject.CompareTag("Player"))
+        {
+
+            Debug.Log("Bomb dropped on Protagonist, Health reduced");
+
+
+            Destroy(gameObject);
+            return;
+        }
+
 
     }
 
