@@ -35,7 +35,7 @@ public class gunController : MonoBehaviour
     {
         GunRotation();
 
-        if (Input.GetKeyDown(KeyCode.G))
+        if (Input.GetMouseButtonDown(0))
         {
 
             ShootBullet();

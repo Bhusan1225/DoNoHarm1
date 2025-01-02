@@ -14,7 +14,7 @@ public class bombTriggerController : MonoBehaviour
             Debug.Log("bomb dropped");
             Destroy(collision.gameObject);
       
-            Destroy(gameObject,2f);
+            Destroy(gameObject);
             return;
         }
 
@@ -23,7 +23,7 @@ public class bombTriggerController : MonoBehaviour
 
             Debug.Log("bomb dropped on Ground");
 
-            Destroy(gameObject,2f);
+            Destroy(gameObject);
             return;
         }
 
