@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class HealthTrigger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-    }
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("You get one Health....");
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+            HealthController healthController = FindAnyObjectByType<HealthController>();
+
+            healthController.Grow();
+            
+            Destroy(gameObject);
+        }
     }
 }
