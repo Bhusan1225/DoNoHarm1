@@ -10,6 +10,7 @@ TagManager:
   - Bullet
   - Air Drop
   - Barrier
+  - Animal
   layers:
   - Default
   - TransparentFX
