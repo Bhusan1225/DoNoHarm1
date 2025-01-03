@@ -3620,7 +3620,7 @@ MonoBehaviour:
   maxRotation: 180
   bulletPrefab: {fileID: 8829155419386465981, guid: a935cb93c7bcf12489186cfabc550cd2, type: 3}
   gunTip: {fileID: 1068342894}
-  bulletSpeed: 40
+  bulletSpeed: 62
   DelayeDestroyBUllet: 5
   isShooting: 0
   Shootingdelay: 2
