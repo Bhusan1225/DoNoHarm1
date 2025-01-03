@@ -39,6 +39,16 @@ public class bombTriggerController : MonoBehaviour
             return;
         }
 
+        if (collision.gameObject.CompareTag("Barrier"))
+        {
+
+            Debug.Log("bomb dropped on barrier");
+            
+
+            Destroy(gameObject);
+            return;
+        }
+
 
     }
 

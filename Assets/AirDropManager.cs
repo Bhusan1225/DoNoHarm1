@@ -8,7 +8,12 @@ public class AirDropManager : MonoBehaviour
     public bool isMultipleShootOn;
     public bool isBarrierOn;
 
+    public GameObject Barrier;
+
     float deactivationTime = 5f;
+    float deactivationBarrierTime = 6f;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +63,18 @@ public class AirDropManager : MonoBehaviour
 
     void ActivateBarrier()
     {
+        if(!isBarrierOn)
+        {
+            isBarrierOn = true;
+            Barrier.SetActive(true);
 
+            Invoke(nameof(deactivateBarrier), deactivationBarrierTime);
+        }
     }
+
+    void deactivateBarrier()
+    {
+        Barrier.SetActive(false);
+    }
+
 }

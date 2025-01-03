@@ -8,6 +8,8 @@ TagManager:
   - Bomb
   - Ground
   - Bullet
+  - Air Drop
+  - Barrier
   layers:
   - Default
   - TransparentFX
