@@ -13,6 +13,10 @@ public class AirDropManager : MonoBehaviour
     float deactivationTime = 5f;
     float deactivationBarrierTime = 6f;
 
+    //batch
+    public GameObject BarrierBatch;
+    public GameObject MultipleShootBatch;
+
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +54,7 @@ public class AirDropManager : MonoBehaviour
             gunController gunControl = FindAnyObjectByType<gunController>();
 
             gunControl.setShootingInput();
+            MultipleShootBatch.SetActive(true);
 
             Invoke(nameof(deactivateMultipleShoot), deactivationTime);
 
@@ -59,6 +64,7 @@ public class AirDropManager : MonoBehaviour
     void deactivateMultipleShoot()
     {
         isMultipleShootOn = false;
+        MultipleShootBatch.SetActive(false);
     }
 
     void ActivateBarrier()
@@ -67,6 +73,7 @@ public class AirDropManager : MonoBehaviour
         {
             isBarrierOn = true;
             Barrier.SetActive(true);
+            BarrierBatch.SetActive(true);
 
             Invoke(nameof(deactivateBarrier), deactivationBarrierTime);
         }
@@ -75,6 +82,7 @@ public class AirDropManager : MonoBehaviour
     void deactivateBarrier()
     {
         Barrier.SetActive(false);
+        BarrierBatch.SetActive(false);
     }
 
 }
