@@ -18,11 +18,7 @@ public class HealthController : MonoBehaviour
         healthBar.Add(this.transform);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 
     public void Grow()
     {

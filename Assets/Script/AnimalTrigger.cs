@@ -6,9 +6,9 @@ public class AnimalTrigger : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Plant"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Animal garaze your Plants");
+            Debug.Log("Animal killed player");
             Destroy(collision.gameObject);
         }
     }
