@@ -63,7 +63,7 @@ public class gunController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Shootingdelay = 4f;
+            Shootingdelay = 2f;
             ShootBullet();
         }
     }
