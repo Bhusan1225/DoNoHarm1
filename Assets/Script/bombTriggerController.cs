@@ -13,7 +13,13 @@ public class bombTriggerController : MonoBehaviour
 
             Debug.Log("bomb dropped");
             Destroy(collision.gameObject);
-      
+
+            PlantController grassController = FindObjectOfType<PlantController>();
+            if (grassController != null)
+            {
+                grassController.RemoveGrass(collision.transform);
+            }
+
             Destroy(gameObject);
             return;
         }
