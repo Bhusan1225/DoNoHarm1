@@ -32,10 +32,10 @@ public class PlantController : MonoBehaviour
             SpawnPlant();
         }
 
-        UpdatePlantCountUI();
+        //UpdatePlantCountUI();
         //SpawnSeed();
 
-        UpdatePlantCountUI();
+        
     }
 
     private void Update()
@@ -45,8 +45,6 @@ public class PlantController : MonoBehaviour
     public void SpawnPlant()
     {
 
-        
-       
             Vector2 randomPosition = new Vector2(
             Random.Range(spawnAreaMin.x, spawnAreaMax.x),
             Random.Range(spawnAreaMin.y, spawnAreaMax.y)
@@ -55,10 +53,7 @@ public class PlantController : MonoBehaviour
             Transform newGrass = Instantiate(PlantPrefab, randomPosition, PlantSpawnRotation);
 
             Plant.Add(newGrass);
-            
-        
-       
-
+  
     }
 
     public void RemoveGrass(Transform grassTransform)
@@ -66,6 +61,7 @@ public class PlantController : MonoBehaviour
         if (Plant.Contains(grassTransform))
         {
             Plant.Remove(grassTransform);
+            Debug.Log("Plant removed. Remaining plants: " + Plant.Count);
             UpdatePlantCountUI();
         }
     }
