@@ -4,46 +4,53 @@ using UnityEngine;
 
 public class HealthTrigger : MonoBehaviour
 {
-    bool ishearthtaken;
+    private bool isHeartTaken = false;
+
+
     private void Start()
     {
+        
         StartCoroutine(DestroyHeart(5f));
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("You get one Health....");
 
             HealthController healthController = FindAnyObjectByType<HealthController>();
 
             healthController.Grow();
-            ishearthtaken = true;
+
+            HeartSpawn heartSpawner = FindAnyObjectByType<HeartSpawn>();
+            if (heartSpawner != null)
+            {
+                heartSpawner.NotifyHeartTaken();
+            }
             Destroy(gameObject);
         }
     }
 
 
-    private  IEnumerator DestroyHeart (float delay)
+    private IEnumerator DestroyHeart(float delay)
     {
+        
         yield return new WaitForSeconds(delay);
 
         
-
-        
-        gameObject.SetActive(false);
-        Destroy(gameObject,5);
-
-        Invoke(nameof(CheckHeartTaken), 4f);
-
-    }
-
-    void CheckHeartTaken()
-    {
-        HeartSpawn healthSpawn = FindAnyObjectByType<HeartSpawn>();
-        if (!ishearthtaken)
+        if (!isHeartTaken)
         {
-            healthSpawn.noHeartThere();
+            Debug.Log("Heart was not taken, ready for next spawn.");
+
+            HeartSpawn heartSpawner = FindAnyObjectByType<HeartSpawn>();
+            if (heartSpawner != null)
+            {
+                heartSpawner.NotifyHeartTaken();
+            }
+
+            Destroy(gameObject);
         }
     }
 }
+

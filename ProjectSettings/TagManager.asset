@@ -11,6 +11,7 @@ TagManager:
   - Air Drop
   - Barrier
   - Animal
+  - Tree
   layers:
   - Default
   - TransparentFX

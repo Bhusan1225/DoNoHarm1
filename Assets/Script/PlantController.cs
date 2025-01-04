@@ -66,10 +66,6 @@ public class PlantController : MonoBehaviour
         }
     }
 
-    private void UpdatePlantCountUI()
-    {
-        plantCount_text.text = "Plants: " + Plant.Count;
-    }
 
     public void AddGrassFromSeed()
     {
@@ -85,5 +81,9 @@ public class PlantController : MonoBehaviour
         UpdatePlantCountUI(); 
     }
 
- 
+    private void UpdatePlantCountUI()
+    {
+        plantCount_text.text = "Plants: " + Plant.Count;
+    }
+
 }
