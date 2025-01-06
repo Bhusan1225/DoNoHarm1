@@ -27,7 +27,7 @@ public class PlantController : MonoBehaviour
         Plant = new List<Transform>();
         Plant.Add(this.transform);
 
-        for (int i = 1; i < 8; i++)
+        for (int i = 1; i < 10; i++)
         {
             SpawnPlant();
         }
