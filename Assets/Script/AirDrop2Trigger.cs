@@ -23,7 +23,7 @@ public class AirDrop2Trigger : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             Debug.Log("The crate is landed on the ground");
-            Destroy(gameObject, 5);
+            Destroy(gameObject, 10);
 
         }
 

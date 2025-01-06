@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Bomb2trigger : MonoBehaviour
 {
+    
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Plant"))
@@ -57,6 +60,16 @@ public class Bomb2trigger : MonoBehaviour
 
             Debug.Log("bomb dropped on barrier");
 
+
+            Destroy(gameObject);
+            return;
+        }
+
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            HealthController healthController = FindAnyObjectByType<HealthController>();
+            Debug.Log("Good target");
+            healthController.Grow();
 
             Destroy(gameObject);
             return;

@@ -8,7 +8,10 @@ public class gameOverController : MonoBehaviour
 
     public HealthController healthController;
 
+    public float delayPupup = 2f;
+
     public GameObject gameOverPanel;
+    public GameObject LowPlantpopupPanel;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +22,9 @@ public class gameOverController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(plantController.Plant.Count <1)
+        LowPlantPopup();
+
+        if (plantController.Plant.Count ==1)
         {
             gameOverPanel.SetActive(true);
         }
@@ -30,6 +35,22 @@ public class gameOverController : MonoBehaviour
         }
     }
 
-    
+    void LowPlantPopup()
+    {
+        if (plantController.Plant.Count == 2)
+        {
+            LowPlantpopupPanel.SetActive(true);
+            Invoke(nameof(DeactivatePopup), delayPupup);
+
+        }else
+        {
+            LowPlantpopupPanel.SetActive(false);
+        }
+    }
+
+    void DeactivatePopup()
+    {
+        LowPlantpopupPanel.SetActive(false);
+    }
 
 }
