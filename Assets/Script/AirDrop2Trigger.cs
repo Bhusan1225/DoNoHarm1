@@ -23,7 +23,7 @@ public class AirDrop2Trigger : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             Debug.Log("The crate is landed on the ground");
-            Destroy(gameObject, 2);
+            Destroy(gameObject, 5);
 
         }
 
@@ -31,6 +31,13 @@ public class AirDrop2Trigger : MonoBehaviour
         {
             Debug.Log("The crate is landed on the plant");
 
+
+        }
+
+        if (collision.gameObject.CompareTag("Animal"))
+        {
+            Debug.Log("The crate is landed on the ground");
+            Destroy(gameObject, 5);
 
         }
     }

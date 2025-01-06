@@ -9,8 +9,8 @@ public class HealthController : MonoBehaviour
 
     public Transform healthBarContainer;
     public GameObject healthBarUIPrefab;
-    private List<RectTransform> healthBar;
-    private int maxHealth = 14;
+    public  List<RectTransform> healthBar;
+    public int maxHealth = 19;
 
     void Start()
     {
