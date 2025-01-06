@@ -16,8 +16,9 @@ public class PlayerFallController : MonoBehaviour
 
                 gameOverPanel.SetActive(true);
             }
-            else
+            else if(healthController.healthBar.Count < 1)
             {
+
                 healthController.Reduce();
             }
         }
