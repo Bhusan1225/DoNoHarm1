@@ -23,7 +23,7 @@ public class HealthTrigger : MonoBehaviour
 
             healthController.Grow();
 
-            
+
             SoundManager soundManager = FindAnyObjectByType<SoundManager>();
             soundManager.HealthCollectedAudio();
 
