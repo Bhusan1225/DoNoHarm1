@@ -22,7 +22,7 @@ public class UIInfoManager : MonoBehaviour
     void Start()
     {
         BackButton.onClick.AddListener(PlayGame);
-
+       
 
     }
 

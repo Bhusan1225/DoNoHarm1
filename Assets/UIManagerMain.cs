@@ -16,8 +16,9 @@ public class UIManagerMain : MonoBehaviour
     public string PlayLevelName;
     public string InfoLevelName;
 
-  
 
+    [Header("SoundManager")]
+    public SoundManager soundManager;
 
 
 
@@ -40,11 +41,13 @@ public class UIManagerMain : MonoBehaviour
 
     void PlayGame()
     {
+        soundManager.PlayButtonClickAudio();
         SceneManager.LoadScene(PlayLevelName);
     }
 
     void GoToInfo()
     {
+        soundManager.PlayButtonClickAudio();
         SceneManager.LoadScene(InfoLevelName);
     }
 }
