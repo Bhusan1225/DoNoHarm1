@@ -14,8 +14,9 @@ public class UIInfoManager : MonoBehaviour
 
     [Header("Scene Names")]
     public string PlayLevelName;
-    
 
+    [Header("SoundManager")]
+    public SoundManager soundManager; 
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +34,7 @@ public class UIInfoManager : MonoBehaviour
 
     void PlayGame()
     {
+        soundManager.PlayButtonClickAudio();
         SceneManager.LoadScene(PlayLevelName);
     }
 

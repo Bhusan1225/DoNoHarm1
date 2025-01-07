@@ -23,7 +23,8 @@ public class UIManager : MonoBehaviour
     public Button WinRetryButton;
     public Button WinQuitButton;
 
-  
+    [Header("SoundManager")]
+    public SoundManager soundManager;
 
 
 
@@ -47,11 +48,13 @@ public class UIManager : MonoBehaviour
 
     void RetryGame()
     {
+        soundManager.PlayButtonClickAudio();
         SceneManager.LoadScene(RetryLevelName);
     }
 
     void GoMainMenu()
     {
+        soundManager.PlayButtonClickAudio();
         SceneManager.LoadScene(QuitLevelName);
     }
 }
