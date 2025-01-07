@@ -10,8 +10,9 @@ public class SeedsTrigger : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("Seed collected!");
+            SoundManager soundManager = FindAnyObjectByType<SoundManager>();
+            soundManager.HealthCollectedAudio();
 
-            
             PlantController plantController = FindObjectOfType<PlantController>();
             if (plantController != null)
             {

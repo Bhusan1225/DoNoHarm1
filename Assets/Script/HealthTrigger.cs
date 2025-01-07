@@ -23,6 +23,10 @@ public class HealthTrigger : MonoBehaviour
 
             healthController.Grow();
 
+            
+            SoundManager soundManager = FindAnyObjectByType<SoundManager>();
+            soundManager.HealthCollectedAudio();
+
             HeartSpawn heartSpawner = FindAnyObjectByType<HeartSpawn>();
             if (heartSpawner != null)
             {

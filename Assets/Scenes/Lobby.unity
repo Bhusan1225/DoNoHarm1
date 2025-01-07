@@ -828,7 +828,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 47932e1b934e53a4d8a40fbbb5b5ee2e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.048
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1732,6 +1732,7 @@ MonoBehaviour:
   gameOverAudio: {fileID: 8300000, guid: ee14c24f474eb0443857ab3016c3ef38, type: 3}
   buttonClickAudio: {fileID: 8300000, guid: d3f397f27993abe4989171e2ecbd32bf, type: 3}
   alaramAudio: {fileID: 8300000, guid: e31119facad224444a46261b10bce24e, type: 3}
+  winAudio: {fileID: 8300000, guid: 7cad2143a899e5c44b907ba35f665664, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

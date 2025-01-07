@@ -15,6 +15,8 @@ public class SoundManager : MonoBehaviour
     public AudioClip gameOverAudio;
     public AudioClip buttonClickAudio;
     public AudioClip alaramAudio;
+    public AudioClip winAudio;
+
 
 
 
@@ -37,6 +39,14 @@ public class SoundManager : MonoBehaviour
 
 
     //sfx
+    public void WinAudio()
+    {
+        if (soundFXAudioSource != null && winAudio != null)
+        {
+            soundFXAudioSource.PlayOneShot(winAudio);
+        }
+    }
+
     public void HealthCollectedAudio()
     {
         if (soundFXAudioSource != null && healthCollectedAudio != null)
