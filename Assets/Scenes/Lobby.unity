@@ -1731,6 +1731,7 @@ MonoBehaviour:
   healthCollectedAudio: {fileID: 8300000, guid: 52bc4506ce15b6b4ea13f6c3573b9475, type: 3}
   gameOverAudio: {fileID: 8300000, guid: ee14c24f474eb0443857ab3016c3ef38, type: 3}
   buttonClickAudio: {fileID: 8300000, guid: d3f397f27993abe4989171e2ecbd32bf, type: 3}
+  alaramAudio: {fileID: 8300000, guid: e31119facad224444a46261b10bce24e, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

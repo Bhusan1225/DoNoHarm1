@@ -14,6 +14,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip healthCollectedAudio;
     public AudioClip gameOverAudio;
     public AudioClip buttonClickAudio;
+    public AudioClip alaramAudio;
 
 
 
@@ -41,6 +42,13 @@ public class SoundManager : MonoBehaviour
         if (soundFXAudioSource != null && healthCollectedAudio != null)
         {
             soundFXAudioSource.PlayOneShot(healthCollectedAudio);
+        }
+    }
+    public void AlaramAudioAudio()
+    {
+        if (soundFXAudioSource != null && alaramAudio != null)
+        {
+            soundFXAudioSource.PlayOneShot(alaramAudio);
         }
     }
     public void PlayGameOverAudio()

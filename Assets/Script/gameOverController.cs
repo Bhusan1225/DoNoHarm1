@@ -13,6 +13,9 @@ public class gameOverController : MonoBehaviour
     public GameObject gameOverPanel;
     public GameObject LowPlantpopupPanel;
 
+    [Header("Sound Manager")]
+    public SoundManager soundManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,12 +28,15 @@ public class gameOverController : MonoBehaviour
         LowPlantPopup();
 
         if (plantController.Plant.Count ==1)
+
         {
+            soundManager.PlayGameOverAudio();
             gameOverPanel.SetActive(true);
         }
 
         if (healthController.healthBar.Count <1)
         {
+            soundManager.PlayGameOverAudio();
             gameOverPanel.SetActive(true);
         }
     }
@@ -39,8 +45,9 @@ public class gameOverController : MonoBehaviour
     {
         if (plantController.Plant.Count == 2)
         {
+            soundManager.AlaramAudioAudio();
             LowPlantpopupPanel.SetActive(true);
-            Invoke(nameof(DeactivatePopup), delayPupup);
+            
 
         }else
         {
