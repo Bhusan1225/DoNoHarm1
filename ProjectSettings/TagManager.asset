@@ -6,6 +6,12 @@ TagManager:
   tags:
   - Plant
   - Bomb
+  - Ground
+  - Bullet
+  - Air Drop
+  - Barrier
+  - Animal
+  - Tree
   layers:
   - Default
   - TransparentFX
