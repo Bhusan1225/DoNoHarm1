@@ -6,14 +6,12 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     //player walk
-    public float playerSpeed;
-    
-    
-    //player jump
-    public float JumpHeight;
-   
+    [SerializeField]private float playerSpeed;
 
-    Rigidbody2D rb;
+    //player jump
+    [SerializeField]private float JumpHeight;
+
+    private Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
@@ -39,8 +37,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     }
-
-    void playerjump()
+        void playerjump()
     {
        
        float vertical = Input.GetAxisRaw("Jump");

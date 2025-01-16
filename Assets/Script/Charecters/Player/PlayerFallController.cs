@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class PlayerFallController : MonoBehaviour
 {
-
-    public HealthController healthController;
-    public GameObject gameOverPanel;
+    [SerializeField]
+    private HealthController healthController;
+    [SerializeField]
+    private GameObject gameOverPanel;
 
     [Header ("Sound Manager")]
-    public SoundManager soundManager;
+    [SerializeField]private SoundManager soundManager;
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))

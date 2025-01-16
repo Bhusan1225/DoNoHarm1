@@ -93,9 +93,9 @@ GameObject:
   - component: {fileID: 3934060741483273124}
   - component: {fileID: 7632444296072735339}
   - component: {fileID: 7606207865811385839}
-  - component: {fileID: 2285609478367109211}
   - component: {fileID: 7001472984629503002}
   - component: {fileID: 6259745303386518280}
+  - component: {fileID: 5543199839279384988}
   m_Layer: 0
   m_Name: Animal----------
   m_TagString: Animal
@@ -185,21 +185,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthController: {fileID: 0}
   gameOverPanel: {fileID: 0}
---- !u!114 &2285609478367109211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6432712578074514162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e60bbae8ab34284dbc6379be83ad8ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  patrolSpeed: 2
-  pointA: {x: 19.4, y: -9.57, z: 0}
-  pointB: {x: 21.6, y: -9.57, z: 0}
 --- !u!61 &7001472984629503002
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -272,3 +257,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5543199839279384988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6432712578074514162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fd771a51dd198c4f82e6ecb980613f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  patrolSpeed: 2
+  pointA: {x: 19.4, y: -9.57, z: 0}
+  pointB: {x: 21.6, y: -9.57, z: 0}
