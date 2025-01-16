@@ -7,7 +7,7 @@ public class HealthUIController : MonoBehaviour
     [SerializeField] private Transform healthBarContainer;
     [SerializeField] private GameObject healthBarUIPrefab;
     internal List<RectTransform> healthBar;
-    [SerializeField] private int maxHealth = 19;
+    [SerializeField] internal int maxHealth = 19;
 
     void Start()
     {

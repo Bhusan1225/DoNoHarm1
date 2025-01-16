@@ -6,19 +6,17 @@ public class SoundManager : MonoBehaviour
 {
    
     [Header("Audio source(speaker)")]
-    public AudioSource backgroundAudioSource;
-    public AudioSource soundFXAudioSource;
+
+    [SerializeField] private AudioSource backgroundAudioSource;
+    [SerializeField] private AudioSource soundFXAudioSource;
 
     
     [Header ("Audio clip(CD)")]
-    public AudioClip healthCollectedAudio;
-    public AudioClip gameOverAudio;
-    public AudioClip buttonClickAudio;
-    public AudioClip alaramAudio;
-    public AudioClip winAudio;
-
-
-
+    [SerializeField] private AudioClip healthCollectedAudio;
+    [SerializeField] private AudioClip gameOverAudio;
+    [SerializeField] private AudioClip buttonClickAudio;
+    [SerializeField] private AudioClip alaramAudio;
+    [SerializeField] private AudioClip winAudio;
 
     private void Awake()
     {
@@ -26,8 +24,7 @@ public class SoundManager : MonoBehaviour
         PlayBackgroundMusic();
     }
 
-
-    
+ 
     //background 
     public void PlayBackgroundMusic()
     {

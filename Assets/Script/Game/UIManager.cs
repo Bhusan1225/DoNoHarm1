@@ -10,21 +10,21 @@ public class UIManager : MonoBehaviour
     [Header("Game Over panel")]
     [Header("Buttons")]
 
-    public Button RetryButton;
-    public Button QuitButton;
+    [SerializeField] private Button RetryButton;
+    [SerializeField] private Button QuitButton;
 
     [Header("Scene Names")]
-    public string RetryLevelName;
-    public string QuitLevelName;
+    [SerializeField] private string RetryLevelName;
+    [SerializeField] private string QuitLevelName;
 
     [Header("Winning UI panel")]
     [Header("Buttons")]
 
-    public Button WinRetryButton;
-    public Button WinQuitButton;
+    [SerializeField] private Button WinRetryButton;
+    [SerializeField] private Button WinQuitButton;
 
     [Header("SoundManager")]
-    public SoundManager soundManager;
+    [SerializeField] private SoundManager soundManager;
 
 
 

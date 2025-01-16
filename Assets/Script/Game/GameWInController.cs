@@ -4,14 +4,10 @@ using UnityEngine;
 
 public class GameWinController : MonoBehaviour
 {
-    public HealthUIController healthController;
+    [SerializeField]private HealthUIController healthController;
 
-    public GameObject gameWinPanel;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]private GameObject gameWinPanel;
+    
 
     // Update is called once per frame
     void Update()

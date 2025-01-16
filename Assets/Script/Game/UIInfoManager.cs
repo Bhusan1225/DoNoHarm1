@@ -9,28 +9,22 @@ public class UIInfoManager : MonoBehaviour
     [Header("Game Start panel")]
     [Header("Buttons")]
 
-    public Button BackButton;
+    [SerializeField] private Button BackButton;
    
 
     [Header("Scene Names")]
-    public string PlayLevelName;
+    [SerializeField] private string PlayLevelName;
 
     [Header("SoundManager")]
-    public SoundManager soundManager; 
+    [SerializeField] private SoundManager soundManager; 
 
     // Start is called before the first frame update
     void Start()
     {
         BackButton.onClick.AddListener(PlayGame);
-       
-
+  
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     void PlayGame()
     {
