@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerFallController : MonoBehaviour
 {
     [SerializeField]
-    private HealthController healthController;
+    private HealthUIController healthController;
     [SerializeField]
     private GameObject gameOverPanel;
 

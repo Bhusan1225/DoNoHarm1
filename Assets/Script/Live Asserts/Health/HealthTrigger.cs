@@ -19,7 +19,7 @@ public class HealthTrigger : MonoBehaviour
         {
             Debug.Log("You get one Health....");
 
-            HealthController healthController = FindAnyObjectByType<HealthController>();
+            HealthUIController healthController = FindAnyObjectByType<HealthUIController>();
 
             healthController.Grow();
 

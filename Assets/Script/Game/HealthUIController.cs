@@ -2,15 +2,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthController : MonoBehaviour
+public class HealthUIController : MonoBehaviour
 {
-
-
-
-    public Transform healthBarContainer;
-    public GameObject healthBarUIPrefab;
-    public  List<RectTransform> healthBar;
-    public int maxHealth = 19;
+    [SerializeField] private Transform healthBarContainer;
+    [SerializeField] private GameObject healthBarUIPrefab;
+    internal List<RectTransform> healthBar;
+    [SerializeField] private int maxHealth = 19;
 
     void Start()
     {

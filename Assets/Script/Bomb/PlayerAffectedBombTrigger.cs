@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bombTriggerController : MonoBehaviour
+public class PlayerAffectedBombTrigger : MonoBehaviour
 {
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -22,7 +22,7 @@ public class bombTriggerController : MonoBehaviour
 
             Debug.Log("Bomb dropped on Protagonist, Health reduced");
             
-            HealthController healtController = FindAnyObjectByType<HealthController>();
+            HealthUIController healtController = FindAnyObjectByType<HealthUIController>();
             healtController.Reduce();
 
             Destroy(gameObject);

@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameWInController : MonoBehaviour
+public class GameWinController : MonoBehaviour
 {
-    public HealthController healthController;
+    public HealthUIController healthController;
 
     public GameObject gameWinPanel;
     // Start is called before the first frame update

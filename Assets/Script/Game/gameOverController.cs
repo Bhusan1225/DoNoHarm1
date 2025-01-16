@@ -2,38 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class gameOverController : MonoBehaviour
+public class GameOverController : MonoBehaviour
 {
-    public PlantController plantController;
 
-    public HealthController healthController;
+    [SerializeField] private PlantController plantController;
 
-    public float delayPupup = 2f;
+    [SerializeField] private HealthUIController healthController;
 
-    public GameObject gameOverPanel;
-    public GameObject LowPlantpopupPanel;
+    [SerializeField] private float delayPupup = 2f;
+
+    [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] private GameObject LowPlantpopupPanel;
 
     [Header("Sound Manager")]
-    public SoundManager soundManager;
+    [SerializeField] public SoundManager soundManager;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    
     void Update()
     {
         LowPlantPopup();
 
         if (plantController.Plant.Count ==1)
-
-        {
-            soundManager.PlayGameOverAudio();
-            gameOverPanel.SetActive(true);
-        }
-
         if (healthController.healthBar.Count <1)
         {
             soundManager.PlayGameOverAudio();

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BombTrigger : MonoBehaviour
+public class PlantAffectedBombTrigger : MonoBehaviour
 {
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -23,7 +23,7 @@ public class BombTrigger : MonoBehaviour
             return;
         }
 
-        if (collision.gameObject.CompareTag("Ground"))
+        else if (collision.gameObject.CompareTag("Ground"))
         {
 
             Debug.Log("bomb dropped on Ground");
@@ -32,7 +32,7 @@ public class BombTrigger : MonoBehaviour
             return;
         }
 
-        if (collision.gameObject.CompareTag("Tree"))
+        else if (collision.gameObject.CompareTag("Tree"))
         {
 
             Debug.Log("bomb dropped on tree");
@@ -41,19 +41,19 @@ public class BombTrigger : MonoBehaviour
             return;
         }
 
-        if (collision.gameObject.CompareTag("Player"))
+        else if (collision.gameObject.CompareTag("Player"))
         {
 
             Debug.Log("Bomb dropped on Protagonist, Health reduced");
 
-            HealthController healtController = FindAnyObjectByType<HealthController>();
+            HealthUIController healtController = FindAnyObjectByType<HealthUIController>();
             healtController.Reduce();
 
             Destroy(gameObject);
             return;
         }
 
-        if (collision.gameObject.CompareTag("Barrier"))
+        else if (collision.gameObject.CompareTag("Barrier"))
         {
 
             Debug.Log("bomb dropped on barrier");
@@ -63,9 +63,9 @@ public class BombTrigger : MonoBehaviour
             return;
         }
 
-        if (collision.gameObject.CompareTag("Bullet"))
+        else if (collision.gameObject.CompareTag("Bullet"))
         {
-            HealthController healthController = FindAnyObjectByType<HealthController>();
+            HealthUIController healthController = FindAnyObjectByType<HealthUIController>();
             Debug.Log("Good target");
             healthController.Grow();
 
