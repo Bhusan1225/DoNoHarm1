@@ -5,31 +5,17 @@ using UnityEngine;
 public class AirDropManager : MonoBehaviour
 {
 
-    public bool isMultipleShootOn;
-    public bool isBarrierOn;
+    private bool isMultipleShootOn;
+    private bool isBarrierOn;
 
-    public GameObject Barrier;
-
-    public float deactivationMultipleShotTime = 5f;
-    public float deactivationBarrierTime = 6f;
+    [SerializeField]private GameObject Barrier;
+    
+    [SerializeField]private float deactivationMultipleShotTime = 5f;
+    [SerializeField]private float deactivationBarrierTime = 6f;
 
     //batch
-    public GameObject BarrierBatch;
-    public GameObject MultipleShootBatch;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    [SerializeField]private GameObject BarrierBatch;
+    [SerializeField]private GameObject MultipleShootBatch;
 
     public void ActivatePowerUp(AirDropEnum AirDropType)
     {

@@ -11,8 +11,6 @@ public class flyingController : MonoBehaviour
     
     private Vector3 targetPoint;
 
-
-
     void Start()
     {
         setPetrolPoint();
