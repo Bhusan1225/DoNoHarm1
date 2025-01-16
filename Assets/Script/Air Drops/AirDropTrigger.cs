@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class AirDropTrigger : MonoBehaviour
 {
-    public AirDropEnum AirDropType;
+    [SerializeField]
+    private AirDropEnum AirDropType;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("Player"))
@@ -20,18 +21,12 @@ public class AirDropTrigger : MonoBehaviour
 
         }
 
-        if (collision.gameObject.CompareTag("Ground"))
+        else if (collision.gameObject.CompareTag("Ground"))
         {
             Debug.Log("The crate is landed on the ground");
             Destroy(gameObject, 2);
 
         }
-        
-        if (collision.gameObject.CompareTag("Plant"))
-        {
-            Debug.Log("The crate is landed on the plant");
-           
-
-        }
+   
     }
 }
