@@ -13,8 +13,8 @@ public class PlantController : MonoBehaviour
     private Quaternion PlantSpawnRotation = Quaternion.identity;
 
     //randomize
-    private Vector2 spawnAreaMin = new Vector2(-24, -12);
-    private Vector2 spawnAreaMax = new Vector2(24, 13);
+    [SerializeField] private Vector2 spawnAreaMin = new Vector2(-24, -12);
+    [SerializeField] private Vector2 spawnAreaMax = new Vector2(24, 13);
 
     void Start()
     {
