@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameWinController : MonoBehaviour
 {
-    [SerializeField]private HealthUIController healthController;
+    [SerializeField]private UIHealthController UIhealthController;
 
     [SerializeField]private GameObject gameWinPanel;
     
@@ -12,9 +12,9 @@ public class GameWinController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (healthController.healthBar.Count == healthController.maxHealth)
+        if (UIhealthController.healthBar.Count == UIhealthController.maxHealth)
         {
-            SoundManager soundManager = FindAnyObjectByType<SoundManager>();
+            GameSoundManager soundManager = FindAnyObjectByType<GameSoundManager>();
             soundManager.WinAudio();
 
             gameWinPanel.SetActive(true);

@@ -46,7 +46,7 @@ public class PlantAffectedBombTrigger : MonoBehaviour
 
             Debug.Log("Bomb dropped on Protagonist, Health reduced");
 
-            HealthUIController healtController = FindAnyObjectByType<HealthUIController>();
+            UIHealthController healtController = FindAnyObjectByType<UIHealthController>();
             healtController.Reduce();
 
             Destroy(gameObject);
@@ -65,7 +65,7 @@ public class PlantAffectedBombTrigger : MonoBehaviour
 
         else if (collision.gameObject.CompareTag("Bullet"))
         {
-            HealthUIController healthController = FindAnyObjectByType<HealthUIController>();
+            UIHealthController healthController = FindAnyObjectByType<UIHealthController>();
             Debug.Log("Good target");
             healthController.Grow();
 

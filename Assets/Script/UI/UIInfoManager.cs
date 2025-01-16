@@ -16,7 +16,7 @@ public class UIInfoManager : MonoBehaviour
     [SerializeField] private string PlayLevelName;
 
     [Header("SoundManager")]
-    [SerializeField] private SoundManager soundManager; 
+    [SerializeField] private GameSoundManager soundManager; 
 
     // Start is called before the first frame update
     void Start()

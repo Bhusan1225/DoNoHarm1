@@ -7,7 +7,7 @@ public class GameOverController : MonoBehaviour
 
     [SerializeField] private PlantController plantController;
 
-    [SerializeField] private HealthUIController healthController;
+    [SerializeField] private UIHealthController healthController;
 
     [SerializeField] private float delayPupup = 2f;
 
@@ -15,7 +15,7 @@ public class GameOverController : MonoBehaviour
     [SerializeField] private GameObject LowPlantpopupPanel;
 
     [Header("Sound Manager")]
-    [SerializeField] public SoundManager soundManager;
+    [SerializeField] public GameSoundManager soundManager;
 
     
     void Update()

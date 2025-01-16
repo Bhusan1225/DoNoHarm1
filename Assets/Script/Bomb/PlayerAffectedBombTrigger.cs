@@ -22,7 +22,7 @@ public class PlayerAffectedBombTrigger : MonoBehaviour
 
             Debug.Log("Bomb dropped on Protagonist, Health reduced");
             
-            HealthUIController healtController = FindAnyObjectByType<HealthUIController>();
+            UIHealthController healtController = FindAnyObjectByType<UIHealthController>();
             healtController.Reduce();
 
             Destroy(gameObject);

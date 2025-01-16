@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AnimalTrigger : MonoBehaviour
 {
-    public HealthUIController healthController;
+    public UIHealthController healthController;
 
     public GameObject gameOverPanel;
     private void OnTriggerEnter2D(Collider2D collision)

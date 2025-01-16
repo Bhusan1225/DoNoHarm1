@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthUIController : MonoBehaviour
+public class UIHealthController : MonoBehaviour
 {
     [SerializeField] private Transform healthBarContainer;
     [SerializeField] private GameObject healthBarUIPrefab;

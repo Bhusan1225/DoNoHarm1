@@ -4,21 +4,21 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class UIManagerMain : MonoBehaviour
+public class UIManagerMainMenu : MonoBehaviour
 {
     [Header("Game Start panel")]
     [Header("Buttons")]
 
-    public Button PlayButton;
-    public Button InfoButton;
+    [SerializeField] private Button PlayButton;
+    [SerializeField] private Button InfoButton;
 
     [Header("Scene Names")]
-    public string PlayLevelName;
-    public string InfoLevelName;
+    [SerializeField] private string PlayLevelName;
+    [SerializeField] private string InfoLevelName;
 
 
     [Header("SoundManager")]
-    public SoundManager soundManager;
+    [SerializeField] private GameSoundManager soundManager;
 
 
 
@@ -29,16 +29,9 @@ public class UIManagerMain : MonoBehaviour
         PlayButton.onClick.AddListener(PlayGame);
         InfoButton.onClick.AddListener(GoToInfo);
 
-
-
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
+  
     void PlayGame()
     {
         soundManager.PlayButtonClickAudio();

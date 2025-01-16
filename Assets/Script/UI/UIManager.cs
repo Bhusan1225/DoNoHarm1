@@ -24,7 +24,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Button WinQuitButton;
 
     [Header("SoundManager")]
-    [SerializeField] private SoundManager soundManager;
+    [SerializeField] private GameSoundManager soundManager;
 
 
 
@@ -38,12 +38,6 @@ public class UIManager : MonoBehaviour
         WinQuitButton.onClick.AddListener(GoMainMenu);
 
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     void RetryGame()

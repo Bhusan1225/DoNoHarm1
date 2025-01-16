@@ -19,15 +19,15 @@ public class HealthTrigger : MonoBehaviour
         {
             Debug.Log("You get one Health....");
 
-            HealthUIController healthController = FindAnyObjectByType<HealthUIController>();
+            UIHealthController healthController = FindAnyObjectByType<UIHealthController>();
 
             healthController.Grow();
 
 
-            SoundManager soundManager = FindAnyObjectByType<SoundManager>();
+            GameSoundManager soundManager = FindAnyObjectByType<GameSoundManager>();
             soundManager.HealthCollectedAudio();
 
-            HeartSpawn heartSpawner = FindAnyObjectByType<HeartSpawn>();
+            HeartSpawnController heartSpawner = FindAnyObjectByType<HeartSpawnController>();
             if (heartSpawner != null)
             {
                 heartSpawner.NotifyHeartTaken();
@@ -47,7 +47,7 @@ public class HealthTrigger : MonoBehaviour
         {
             Debug.Log("Heart was not taken, ready for next spawn.");
 
-            HeartSpawn heartSpawner = FindAnyObjectByType<HeartSpawn>();
+            HeartSpawnController heartSpawner = FindAnyObjectByType<HeartSpawnController>();
             if (heartSpawner != null)
             {
                 heartSpawner.NotifyHeartTaken();

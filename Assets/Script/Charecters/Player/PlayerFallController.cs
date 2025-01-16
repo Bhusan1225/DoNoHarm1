@@ -5,12 +5,12 @@ using UnityEngine;
 public class PlayerFallController : MonoBehaviour
 {
     [SerializeField]
-    private HealthUIController healthController;
+    private UIHealthController healthController;
     [SerializeField]
     private GameObject gameOverPanel;
 
     [Header ("Sound Manager")]
-    [SerializeField]private SoundManager soundManager;
+    [SerializeField]private GameSoundManager soundManager;
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
