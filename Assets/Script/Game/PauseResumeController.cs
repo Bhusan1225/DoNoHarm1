@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameController : MonoBehaviour
+public class PauseResumeController : MonoBehaviour
 {
     private bool isPaused = false;
     // Start is called before the first frame update

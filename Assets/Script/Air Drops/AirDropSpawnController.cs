@@ -4,22 +4,18 @@ using UnityEngine;
 
 public class AirDropSpawnController : MonoBehaviour
 {
-    public GameObject AirDropPrefab;
+    [SerializeField]
+    private GameObject AirDropPrefab;
 
-    public Transform AirDropSpawnTransform;
+    [SerializeField]
+    private Transform AirDropSpawnTransform;
 
     internal bool isAirDropThere;
 
     float delayNextAirDrop = 5f;
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
+   
     void Update()
     {
         if (isAirDropThere == false)

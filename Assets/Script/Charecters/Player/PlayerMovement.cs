@@ -1,17 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
+    //player walk
     public float playerSpeed;
-
-    public float playerJumpHeight;
-    Rigidbody2D rb;
-
+    
+    
+    //player jump
+    public float JumpHeight;
    
 
+    Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
@@ -40,16 +42,18 @@ public class PlayerMovement : MonoBehaviour
 
     void playerjump()
     {
-        float vertical = Input.GetAxisRaw("Jump");
+       
+       float vertical = Input.GetAxisRaw("Jump");
 
-        if (vertical > 0)
+        
+       if (vertical > 0)
         {
-            rb.AddForce(new Vector2(0, playerJumpHeight), ForceMode2D.Impulse);
-
+            rb.velocity = new Vector2(rb.velocity.x, 0);
+            rb.AddForce(new Vector2(0, JumpHeight), ForceMode2D.Impulse);
         }
+            
+
     }
-
-
-   
+    
 
 }

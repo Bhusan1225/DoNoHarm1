@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class flyingController : MonoBehaviour
 {
-    public float patrolSpeed = 2f;
-    public Vector3 pointA;
-    public Vector3 pointB;
+    [SerializeField]
+    private float patrolSpeed = 2f;
+    [SerializeField]
+    private Vector3 pointA, pointB;
+    
     private Vector3 targetPoint;
 
 
-    // Start is called before the first frame update
+
     void Start()
     {
         setPetrolPoint();
