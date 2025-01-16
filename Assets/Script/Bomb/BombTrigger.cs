@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bomb2trigger : MonoBehaviour
+public class BombTrigger : MonoBehaviour
 {
-    
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class flyingController : MonoBehaviour
+public class FlyingController : MonoBehaviour
 {
     [SerializeField]
     private float patrolSpeed = 2f;

@@ -5,8 +5,8 @@ using UnityEngine;
 public class AirDropManager : MonoBehaviour
 {
 
-    private bool isMultipleShootOn;
-    private bool isBarrierOn;
+    internal bool isMultipleShootOn;
+    internal bool isBarrierOn;
 
     [SerializeField]private GameObject Barrier;
     
