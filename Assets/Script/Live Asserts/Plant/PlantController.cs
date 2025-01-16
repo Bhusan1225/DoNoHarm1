@@ -7,20 +7,14 @@ using TMPro;
 public class PlantController : MonoBehaviour
 {
 
-    public List<Transform> Plant;
-    public Transform PlantPrefab;
-    public TextMeshProUGUI plantCount_text;
-     Quaternion PlantSpawnRotation = Quaternion.identity;
-
-    
-
+    [SerializeField] private List<Transform> Plant;
+    [SerializeField] private Transform PlantPrefab;
+    [SerializeField] private TextMeshProUGUI plantCount_text;
+    private Quaternion PlantSpawnRotation = Quaternion.identity;
 
     //randomize
-    public Vector2 spawnAreaMin = new Vector2(-24, -12);
-    public Vector2 spawnAreaMax = new Vector2(24, 13);
-
-   
-
+    private Vector2 spawnAreaMin = new Vector2(-24, -12);
+    private Vector2 spawnAreaMax = new Vector2(24, 13);
 
     void Start()
     {
@@ -32,11 +26,7 @@ public class PlantController : MonoBehaviour
             SpawnPlant();
         }
 
-        //UpdatePlantCountUI();
-        //SpawnSeed();
-
-        
-    }
+      }
 
     private void Update()
     {
