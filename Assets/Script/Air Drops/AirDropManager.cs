@@ -37,7 +37,7 @@ public class AirDropManager : MonoBehaviour
         {
             isMultipleShootOn = true;
 
-            gunController gunControl = FindAnyObjectByType<gunController>();
+            GunController gunControl = FindAnyObjectByType<GunController>();
 
             gunControl.setShootingInput();
             MultipleShootBatch.SetActive(true);

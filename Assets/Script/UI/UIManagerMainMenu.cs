@@ -21,9 +21,6 @@ public class UIManagerMainMenu : MonoBehaviour
     [SerializeField] private GameSoundManager soundManager;
 
 
-
-
-    // Start is called before the first frame update
     void Start()
     {
         PlayButton.onClick.AddListener(PlayGame);

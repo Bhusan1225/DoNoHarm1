@@ -2,30 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class gunController : MonoBehaviour
+public class GunController : MonoBehaviour
 {
 
-    public float rotationSpeed = 100f;
-    public float minRotation = 0f;
-    public float maxRotation = 180f;
+    [SerializeField] private float rotationSpeed = 100f;
+    private float minRotation = 0f;
+    private float maxRotation = 180f;
 
     //bullet
-    public GameObject bulletPrefab;
-    public Transform gunTip;
-    public float bulletSpeed = 10000f;
-    public float DelayeDestroyBUllet = 5f;
-    public bool isShooting;
-    public float Shootingdelay = 3f;
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private Transform gunTip;
+    [SerializeField] private float bulletSpeed = 10000f;
+    [SerializeField] private float DelayeDestroyBUllet = 5f;
+    private bool isShooting;
+    [SerializeField] private float Shootingdelay = 3f;
 
     //ray
-    public float rayDistance = 50f;
-    public LineRenderer lineRenderer;
+    private float rayDistance = 50f;
+    private LineRenderer lineRenderer;
    
 
     private float currentRotation = 0f;
 
     //attach script
-    public AirDropManager DropManager;
+    [SerializeField] private AirDropManager DropManager;
 
 
     private void Start()

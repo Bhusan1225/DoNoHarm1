@@ -7,7 +7,7 @@ using TMPro;
 public class PlantController : MonoBehaviour
 {
 
-    [SerializeField] private List<Transform> Plant;
+    [SerializeField] internal List<Transform> Plant;
     [SerializeField] private Transform PlantPrefab;
     [SerializeField] private TextMeshProUGUI plantCount_text;
     private Quaternion PlantSpawnRotation = Quaternion.identity;
