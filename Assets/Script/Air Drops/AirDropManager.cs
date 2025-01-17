@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class AirDropManager : MonoBehaviour
@@ -16,6 +18,9 @@ public class AirDropManager : MonoBehaviour
     //batch
     [SerializeField]private GameObject BarrierBatch;
     [SerializeField]private GameObject MultipleShootBatch;
+
+    //attached Scripts
+    [SerializeField] private GunController gunControl;
 
     public void ActivatePowerUp(AirDropEnum AirDropType)
     {
@@ -37,18 +42,16 @@ public class AirDropManager : MonoBehaviour
         {
             isMultipleShootOn = true;
 
-            GunController gunControl = FindAnyObjectByType<GunController>();
-
             gunControl.setShootingInput();
             MultipleShootBatch.SetActive(true);
 
-            Invoke(nameof(deactivateMultipleShoot), deactivationMultipleShotTime);
-
+           StartCoroutine(deactivateMultipleShoot(deactivationMultipleShotTime));
         }
     }
 
-    void deactivateMultipleShoot()
+    IEnumerator deactivateMultipleShoot(float deactivationMultipleShotTime)
     {
+        yield return new WaitForSeconds(deactivationMultipleShotTime);
         isMultipleShootOn = false;
         MultipleShootBatch.SetActive(false);
     }
@@ -61,12 +64,14 @@ public class AirDropManager : MonoBehaviour
             Barrier.SetActive(true);
             BarrierBatch.SetActive(true);
 
-            Invoke(nameof(deactivateBarrier), deactivationBarrierTime);
+            StartCoroutine(deactivateBarrier(deactivationBarrierTime));
+            
         }
     }
 
-    void deactivateBarrier()
+    IEnumerator deactivateBarrier(float deactivationBarrierTime)
     {
+        yield return new WaitForSeconds(deactivationBarrierTime);
         isBarrierOn = false;
         Barrier.SetActive(false);
         BarrierBatch.SetActive(false);

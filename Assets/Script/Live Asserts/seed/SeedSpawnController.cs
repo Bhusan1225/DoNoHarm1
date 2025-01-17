@@ -5,25 +5,46 @@ using UnityEngine;
 public class SeedSpawnController : MonoBehaviour
 {
 
+    [Header("Seed Spawn ")]
     //seed
-    [SerializeField] private Transform seedPrefab;
-    [SerializeField] private Vector2 SeedspawnAreaMin = new Vector2(-24, -12);
-    [SerializeField] private Vector2 SeedspawnAreaMax = new Vector2(24, 13);
+    [SerializeField] private GameObject seedPrefab;
+    [SerializeField] private Vector2 SeedSpawnAreaMin = new Vector2(-24, -12);
+    [SerializeField] private Vector2 SeedSpawnAreaMax = new Vector2(24, 13);
 
+    [SerializeField]
+    private float delayNextSeed = 8f;
 
-    // Start is called before the first frame update
-    void Start()
+    internal bool isSeedThere;
+
+    void Update()
     {
-        SpawnSeed();
+
+        
+        RandomSeedSpawn();
+
     }
 
-    public void SpawnSeed()
+    public void RandomSeedSpawn()
     {
-        Vector2 randomPosition = new Vector2(
-            Random.Range(SeedspawnAreaMin.x, SeedspawnAreaMax.x),
-            Random.Range(SeedspawnAreaMin.y, SeedspawnAreaMax.y)
-        );
 
-        Instantiate(seedPrefab, randomPosition, Quaternion.identity);
+        if (!isSeedThere)
+        {
+            Vector2 randomPosition = new Vector2(
+           Random.Range(SeedSpawnAreaMin.x, SeedSpawnAreaMax.x),
+           Random.Range(SeedSpawnAreaMin.y, SeedSpawnAreaMax.y)
+       );
+
+
+            isSeedThere = true;
+            Instantiate(seedPrefab, randomPosition, Quaternion.identity);
+            StartCoroutine(SeedThere(delayNextSeed));
+        }
+
+    }
+
+    IEnumerator SeedThere(float delayNextSeed)
+    {
+        yield return new WaitForSeconds(delayNextSeed);
+        isSeedThere = false;
     }
 }

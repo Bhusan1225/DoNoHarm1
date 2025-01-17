@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DropsSpawnController : MonoBehaviour
+public class DropSpawnController : MonoBehaviour
 {
+    [Header("Drop Spawn ")]
     [SerializeField]
     private GameObject DropPrefab;
 
@@ -12,23 +13,30 @@ public class DropsSpawnController : MonoBehaviour
 
     internal bool isDropThere;
 
-    float delayNextDrop = 5f;
+    private float delayNextDrop = 5f;
 
-
-   
     void Update()
+    {
+
+        DropSpawn();
+       
+
+    }
+
+    void DropSpawn()
     {
         if (isDropThere == false)
         {
             Instantiate(DropPrefab, DropSpawnTransform.position, DropSpawnTransform.rotation);
             isDropThere = true;
-            Invoke(nameof(DropThere), delayNextDrop);
-        }
 
+            StartCoroutine(DropThere(delayNextDrop));
+        }
     }
 
-    public void DropThere()
+   IEnumerator DropThere(float delayNextDrop)
     {
+        yield return new WaitForSeconds(delayNextDrop);
         isDropThere = false;
     }
 }

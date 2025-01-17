@@ -15,7 +15,7 @@ public class GameOverController : MonoBehaviour
     [SerializeField] private GameObject LowPlantpopupPanel;
 
     [Header("Sound Manager")]
-    [SerializeField] public GameSoundManager soundManager;
+    [SerializeField] private GameSoundManager soundManager;
 
     
     void Update()

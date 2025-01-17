@@ -6,6 +6,10 @@ public class AirDropTrigger : MonoBehaviour
 {
     [SerializeField]
     private AirDropEnum AirDropType;
+    
+    //[SerializeField]private AirDropManager DropManager;
+
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("Player"))

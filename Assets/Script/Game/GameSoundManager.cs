@@ -15,7 +15,7 @@ public class GameSoundManager : MonoBehaviour
     [SerializeField] private AudioClip healthCollectedAudio;
     [SerializeField] private AudioClip gameOverAudio;
     [SerializeField] private AudioClip buttonClickAudio;
-    [SerializeField] private AudioClip alaramAudio;
+    [SerializeField] private AudioClip alarmAudio;
     [SerializeField] private AudioClip winAudio;
 
     private void Awake()
@@ -53,9 +53,9 @@ public class GameSoundManager : MonoBehaviour
     }
     public void AlaramAudioAudio()
     {
-        if (soundFXAudioSource != null && alaramAudio != null)
+        if (soundFXAudioSource != null && alarmAudio != null)
         {
-            soundFXAudioSource.PlayOneShot(alaramAudio);
+            soundFXAudioSource.PlayOneShot(alarmAudio);
         }
     }
     public void PlayGameOverAudio()

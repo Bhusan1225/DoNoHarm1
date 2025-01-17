@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class AnimalTrigger : MonoBehaviour
 {
-    public UIHealthController healthController;
-
-    public GameObject gameOverPanel;
+    [SerializeField]private UIHealthController healthController;
+    [SerializeField]private GameObject gameOverPanel;
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))

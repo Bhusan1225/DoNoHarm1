@@ -89,8 +89,6 @@ public class GunController : MonoBehaviour
 
     }
 
-
-
     void ShootBullet()
     {
         if (bulletPrefab != null && gunTip != null && isShooting ==true)
@@ -107,15 +105,16 @@ public class GunController : MonoBehaviour
         }
         isShooting = false;
 
-        Invoke(nameof(ActiveShooting), Shootingdelay);
+        
+        StartCoroutine((ActiveShooting(Shootingdelay)));
     }
 
-    void ActiveShooting()
+    IEnumerator ActiveShooting(float Shootingdelay)
     {
+        yield return new WaitForSeconds(Shootingdelay); 
         isShooting = true;
 
     }
-    
 
     void ShootRay()
     {

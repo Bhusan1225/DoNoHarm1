@@ -23,7 +23,7 @@ public class SeedsTrigger : MonoBehaviour
             SeedSpawnController seedSpawner = FindObjectOfType<SeedSpawnController>();
             if (seedSpawner != null)
             {
-                seedSpawner.SpawnSeed();
+                seedSpawner.RandomSeedSpawn();
             }
 
            
