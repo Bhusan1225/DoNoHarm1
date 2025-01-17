@@ -6,22 +6,28 @@ public class AirDropTrigger : MonoBehaviour
 {
     [SerializeField]
     private AirDropEnum AirDropType;
-    
-    //[SerializeField]private AirDropManager DropManager;
 
-    
+    private AirDropManager dropManager;
+
+
+   void Start()
+    {
+        
+        dropManager = FindObjectOfType<AirDropManager>();
+
+        
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("Player"))
         {
 
             Debug.Log("Player collected the carate");
-            AirDropManager DropManager = FindObjectOfType<AirDropManager>();
-
-            DropManager.ActivatePowerUp(AirDropType);
+      
+            dropManager.ActivatePowerUp(AirDropType);
 
             Destroy(gameObject);
-
 
         }
         else if (collision.gameObject.CompareTag("Ground"))

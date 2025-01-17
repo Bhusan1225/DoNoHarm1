@@ -5,6 +5,16 @@ using UnityEngine;
 public class PlantAffectedBombTrigger : MonoBehaviour
 {
 
+    private PlantController plantController;
+    private UIHealthController healthController;
+
+    private void Start()
+    {
+        plantController = FindAnyObjectByType<PlantController>();
+        healthController = FindAnyObjectByType<UIHealthController>();
+ 
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Plant"))
@@ -13,10 +23,10 @@ public class PlantAffectedBombTrigger : MonoBehaviour
             Debug.Log("bomb dropped");
           
 
-            PlantController grassController = FindObjectOfType<PlantController>();
-            if (grassController != null)
+           
+            if (plantController != null)
             {
-                grassController.RemoveGrass(collision.transform);
+                plantController.RemoveGrass(collision.transform);
             }
             Destroy(collision.gameObject);
             Destroy(gameObject);
@@ -46,8 +56,8 @@ public class PlantAffectedBombTrigger : MonoBehaviour
 
             Debug.Log("Bomb dropped on Protagonist, Health reduced");
 
-            UIHealthController healtController = FindAnyObjectByType<UIHealthController>();
-            healtController.Reduce();
+
+            healthController.Reduce();
 
             Destroy(gameObject);
             return;
@@ -65,7 +75,7 @@ public class PlantAffectedBombTrigger : MonoBehaviour
 
         else if (collision.gameObject.CompareTag("Bullet"))
         {
-            UIHealthController healthController = FindAnyObjectByType<UIHealthController>();
+            
             Debug.Log("Good target");
             healthController.Grow();
 

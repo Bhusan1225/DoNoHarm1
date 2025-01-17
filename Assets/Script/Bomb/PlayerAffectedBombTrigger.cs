@@ -5,6 +5,15 @@ using UnityEngine;
 public class PlayerAffectedBombTrigger : MonoBehaviour
 {
 
+
+    private UIHealthController healthController;
+
+    private void Start()
+    {
+        healthController = FindAnyObjectByType<UIHealthController>();
+
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
     
@@ -21,9 +30,9 @@ public class PlayerAffectedBombTrigger : MonoBehaviour
         {
 
             Debug.Log("Bomb dropped on Protagonist, Health reduced");
-            
-            UIHealthController healtController = FindAnyObjectByType<UIHealthController>();
-            healtController.Reduce();
+
+
+            healthController.Reduce();
 
             Destroy(gameObject);
             return;

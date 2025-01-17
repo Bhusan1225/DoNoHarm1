@@ -14,7 +14,7 @@ public class GameWinController : MonoBehaviour
     {
         if (UIhealthController.healthBar.Count == UIhealthController.maxHealth)
         {
-            //GameSoundManager soundManager = FindAnyObjectByType<GameSoundManager>();
+            
             soundManager.WinAudio();
 
             gameWinPanel.SetActive(true);
