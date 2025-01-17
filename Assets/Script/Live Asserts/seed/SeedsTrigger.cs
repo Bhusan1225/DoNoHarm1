@@ -5,15 +5,25 @@ using UnityEngine;
 
 public class SeedsTrigger : MonoBehaviour
 {
+
+    GameSoundManager soundManager;
+    PlantController plantController;
+
+    private void Start()
+    {
+        soundManager = FindAnyObjectByType<GameSoundManager>();
+        plantController = FindAnyObjectByType<PlantController>();
+        
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("Seed collected!");
-            GameSoundManager soundManager = FindAnyObjectByType<GameSoundManager>();
+            
             soundManager.HealthCollectedAudio();
 
-            PlantController plantController = FindObjectOfType<PlantController>();
+            
             if (plantController != null)
             {
                 plantController.AddGrassFromSeed();
