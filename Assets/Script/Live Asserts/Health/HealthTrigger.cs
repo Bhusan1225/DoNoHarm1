@@ -7,10 +7,16 @@ public class HealthTrigger : MonoBehaviour
     private bool isHeartTaken = false;
 
 
+    UIHealthController healthController;
+    GameSoundManager soundManager;
+    HeartSpawnController heartSpawner;
     private void Start()
     {
         
         StartCoroutine(DestroyHeart(5f));
+        healthController = FindAnyObjectByType<UIHealthController>();
+        soundManager = FindAnyObjectByType<GameSoundManager>();
+        heartSpawner = FindAnyObjectByType<HeartSpawnController>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -19,15 +25,15 @@ public class HealthTrigger : MonoBehaviour
         {
             Debug.Log("You get one Health....");
 
-            UIHealthController healthController = FindAnyObjectByType<UIHealthController>();
+            //UIHealthController healthController = FindAnyObjectByType<UIHealthController>();
 
             healthController.Grow();
 
 
-            GameSoundManager soundManager = FindAnyObjectByType<GameSoundManager>();
+            //GameSoundManager soundManager = FindAnyObjectByType<GameSoundManager>();
             soundManager.HealthCollectedAudio();
 
-            HeartSpawnController heartSpawner = FindAnyObjectByType<HeartSpawnController>();
+            //HeartSpawnController heartSpawner = FindAnyObjectByType<HeartSpawnController>();
             if (heartSpawner != null)
             {
                 heartSpawner.NotifyHeartTaken();
@@ -47,7 +53,7 @@ public class HealthTrigger : MonoBehaviour
         {
             Debug.Log("Heart was not taken, ready for next spawn.");
 
-            HeartSpawnController heartSpawner = FindAnyObjectByType<HeartSpawnController>();
+            //HeartSpawnController heartSpawner = FindAnyObjectByType<HeartSpawnController>();
             if (heartSpawner != null)
             {
                 heartSpawner.NotifyHeartTaken();
